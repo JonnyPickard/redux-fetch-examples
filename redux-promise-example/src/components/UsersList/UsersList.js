@@ -32,7 +32,4 @@ class UsersList extends PureComponent {
   }
 }
 
-export default connect(
-  UsersList.mapStateToProps,
-  { fetchUsers }
-)(UsersList);
+export default connect(UsersList.mapStateToProps, { fetchUsers })(UsersList);
