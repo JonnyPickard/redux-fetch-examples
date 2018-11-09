@@ -2,7 +2,7 @@
 
 - [x] [Redux Promise][0]
 - [x] [Redux Thunk][1]
-- [ ] [Redux Saga][2]
+- [x] [Redux Saga][2]
 - [ ] Shared data with selectors and reselect
 
 ## About
