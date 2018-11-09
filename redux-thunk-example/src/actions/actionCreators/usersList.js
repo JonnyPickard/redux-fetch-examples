@@ -10,7 +10,7 @@ const getUsers = () => {
   return axios.get('http://localhost:3001/users');
 };
 
-export const fetchUsers = dispatch => {
+export const fetchUsers = () => {
   return dispatch => {
     dispatch(fetchUsersBegin());
 
