@@ -1,11 +1,14 @@
 # Examples of Different Redux Fetch Patterns
 
-1. Promise Based using Axios
-2. Redux Thunk
-3. Redux Saga
-4. Shared data with selectors and reselect
+- [x] [Redux Promise][0]
+- [x] [Redux Thunk][1]
+- [ ] [Redux Saga][2]
+- [ ]  Shared data with selectors and reselect
 
 ## About
 
-Examples in order to refresh my knowledge on Redux patterns.
+Redux fetch patterns. See the nested repositories for README's specific to that subject.
 
+[0]: [https://github.com/JonnyPickard/redux-fetch-examples/tree/master/redux-promise-example]
+[1]: [https://github.com/JonnyPickard/redux-fetch-examples/tree/master/redux-thunk-example]
+[2]: [https://github.com/JonnyPickard/redux-fetch-examples/tree/master/redux-saga-example]
