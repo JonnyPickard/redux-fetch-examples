@@ -5,7 +5,7 @@ export default (state = {}, action) => {
     case USERS_LIST_LOADED:
       return {
         ...state,
-        users: action.payload.users
+        users: action.payload.data
       };
     default:
       return state;
