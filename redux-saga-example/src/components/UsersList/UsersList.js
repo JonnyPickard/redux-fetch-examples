@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './UsersList.module.scss';
 
-import { fetchUsers } from '../../actions/actionCreators/usersList';
+import { FETCH_USERS } from '../../actions/actionTypes';
 
 class UsersList extends PureComponent {
   static mapStateToProps = state => {
@@ -13,7 +13,7 @@ class UsersList extends PureComponent {
   };
 
   componentDidMount() {
-    this.props.fetchUsers();
+    this.props.dispatch({ type: FETCH_USERS });
   }
 
   render() {
@@ -32,7 +32,4 @@ class UsersList extends PureComponent {
   }
 }
 
-export default connect(
-  UsersList.mapStateToProps,
-  { fetchUsers }
-)(UsersList);
+export default connect(UsersList.mapStateToProps)(UsersList);

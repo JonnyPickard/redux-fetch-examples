@@ -1,8 +1,9 @@
-import { USERS_LIST_LOADED } from '../actions/actionTypes';
+import { ADD_USERS } from '../actions/actionTypes';
 
 export default (state = {}, action) => {
+  console.log(action);
   switch (action.type) {
-    case USERS_LIST_LOADED:
+    case ADD_USERS:
       return {
         ...state,
         users: action.payload.users
