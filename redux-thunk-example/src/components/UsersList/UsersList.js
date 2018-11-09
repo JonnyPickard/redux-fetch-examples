@@ -8,31 +8,32 @@ import { fetchUsers } from '../../actions/actionCreators/usersList';
 class UsersList extends PureComponent {
   static mapStateToProps = state => {
     return {
-      usersList: state.usersList.users
+      usersList: state.usersList.users,
+      loading: state.usersList.loading
     };
   };
 
   componentDidMount() {
-    this.props.fetchUsers();
+    this.props.dispatch(fetchUsers());
   }
 
   render() {
-    const { usersList } = this.props;
+    const { usersList, loading } = this.props;
 
     return (
       <div className={styles.usersList}>
-        <ul>
-          {usersList &&
-            usersList.map((user, index) => (
+        {loading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <ul>
+            {usersList.map((user, index) => (
               <li key={`users-list-${index}`}>{user.firstName}</li>
             ))}
-        </ul>
+          </ul>
+        )}
       </div>
     );
   }
 }
 
-export default connect(
-  UsersList.mapStateToProps,
-  { fetchUsers }
-)(UsersList);
+export default connect(UsersList.mapStateToProps)(UsersList);
