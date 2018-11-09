@@ -1,0 +1,9 @@
+{
+  "name": "redux-fetch-examples",
+  "version": "1.0.0",
+  "description": "Examples of fetching data with redux",
+  "repository": "git@github.com:JonnyPickard/redux-fetch-examples.git",
+  "author": "Jonny Pickard <Jonathandpickard@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
