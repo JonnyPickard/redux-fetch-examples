@@ -1,12 +1,12 @@
+import { fromJS } from 'immutable';
 import { FETCH_USERS, DELETE_USER } from '../actions/actionTypes';
 
-export default (state = {}, action) => {
+const initialState = fromJS({ users: { byId: {} } });
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_USERS:
-      return {
-        ...state,
-        users: action.payload
-      };
+      return state.mergeDeep(action.payload);
     case DELETE_USER:
       return {
         ...state,

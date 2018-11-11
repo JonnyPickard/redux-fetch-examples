@@ -10,7 +10,8 @@ import UserCard from '../UserCard/UserCard';
 class UsersList extends PureComponent {
   static mapStateToProps = state => {
     return {
-      usersList: state.usersList.users
+      usersById: state.usersList.getIn(['users', 'byId']),
+      allUserIds: state.usersList.getIn(['users', 'allIds'])
     };
   };
 
@@ -19,19 +20,24 @@ class UsersList extends PureComponent {
   }
 
   render() {
-    const { usersList } = this.props;
+    const { allUserIds, usersById } = this.props;
 
     return (
       <div className={styles.usersList}>
         <ul>
-          {usersList &&
-            usersList.map((user, index) => (
-              <UserCard
-                key={`users-list-${index}`}
-                user={user}
-                deleteUser={this.props.deleteUser}
-              />
-            ))}
+          {allUserIds &&
+            usersById &&
+            allUserIds.map((userId, index) => {
+              const user = usersById.get('user' + userId);
+
+              return (
+                <UserCard
+                  key={`users-list-${index}`}
+                  user={user}
+                  deleteUser={this.props.deleteUser}
+                />
+              );
+            })}
         </ul>
       </div>
     );
