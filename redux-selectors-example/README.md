@@ -1,4 +1,4 @@
-# Redux Selectors with ReSelect, Immutable JS & Normalized 
+# Redux Selectors with ReSelect, Immutable JS & Normalized State
 
 ## About
 
@@ -51,6 +51,10 @@ obj.x = 12
 
 console.log(obj2.x) (undefined)
 ```
+
+## Immutable JS
+
+[Immutable JS](https://facebook.github.io/immutable-js/) is a library which doesn't let you mutate objects created with it. If you create a redux store with it you avoid a lot of re-rendering bugs caused by returning a mutated state object from a reducer. 
 
 ## Deep Nested Objects
 
@@ -149,4 +153,8 @@ We can use the allIds array of keys to reference every user object during a map 
   }
 }
 ```
+
+## Normalizr
+
+[Normalizr](https://github.com/paularmstrong/normalizr) is a library that allows you to define schemas for the normalized state you wish your data to be stored in. You can then use these schemas to convert your data into the correct shape.
 
