@@ -6,8 +6,8 @@
 
 After you have connected your component to redux you can dispatch an action creator parent function that returns a function with dispatch passed in as an argument.
 
-Benefits of using this approach are that you can dispatch multiple actions to highlight what state your fetch request 
-is in:
+An interesting pattern when using this approach is dispatching multiple actions to highlight what state your fetch request 
+is in like so:
 
 ```js 
 {
@@ -145,3 +145,5 @@ export default (state = initialState, action) => {
 
 ```
 > Altering state when recieving different actions from the action creators.
+
+You can then display an alert in the case of an error or a loading bar whilst it's loading.
