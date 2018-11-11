@@ -1,12 +1,23 @@
 import axios from 'axios';
 
-import { USERS_LIST_LOADED } from '../actionTypes';
+import { FETCH_USERS, DELETE_USER } from '../actionTypes';
 
-export const fetchUsers = () => {
-  const fetchUsersPromise = axios.get('http://localhost:3001/users');
+export const fetchUsers = () => dispatch => {
+  axios.get('http://localhost:3001/users').then(({ data }) => {
+    dispatch({
+      type: FETCH_USERS,
+      payload: data
+    });
+  });
+};
 
-  return {
-    type: USERS_LIST_LOADED,
-    payload: fetchUsersPromise
-  };
+export const deleteUser = userId => dispatch => {
+  axios.delete('http://localhost:3001/users/' + userId).then(
+    dispatch({
+      type: DELETE_USER,
+      payload: {
+        userId
+      }
+    })
+  );
 };

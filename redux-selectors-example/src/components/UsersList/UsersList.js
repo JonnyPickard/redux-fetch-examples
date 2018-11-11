@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './UsersList.module.scss';
 
-import { fetchUsers } from '../../actions/actionCreators/usersList';
+import { fetchUsers, deleteUser } from '../../actions/actionCreators/usersList';
 
 import UserCard from '../UserCard/UserCard';
 
@@ -26,7 +26,11 @@ class UsersList extends PureComponent {
         <ul>
           {usersList &&
             usersList.map((user, index) => (
-              <UserCard key={`users-list-${index}`} user={user} />
+              <UserCard
+                key={`users-list-${index}`}
+                user={user}
+                deleteUser={this.props.deleteUser}
+              />
             ))}
         </ul>
       </div>
@@ -34,4 +38,6 @@ class UsersList extends PureComponent {
   }
 }
 
-export default connect(UsersList.mapStateToProps, { fetchUsers })(UsersList);
+export default connect(UsersList.mapStateToProps, { fetchUsers, deleteUser })(
+  UsersList
+);
