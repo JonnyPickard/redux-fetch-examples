@@ -1,0 +1,24 @@
+.userCard {
+  display: flex;
+  background: #F0F0F0;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  
+  &Id {
+    padding: 10px;
+  }
+
+  &Names {
+    flex: 1;
+  }
+
+  &DeleteButton {
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 5px;
+    color: white;
+    background: #e00039;
+  }
+}

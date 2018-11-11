@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Simple api to return data",
+  "main": "index.js",
+  "author": "Jonny Pickard",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn && json-server --delay 50 --port 3001 --watch db.json"
+  },
+  "dependencies": {
+    "json-server": "^0.14.0"
+  }
+}
